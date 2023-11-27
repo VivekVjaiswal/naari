@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-// import 'package:naari/widgets/custom_appBar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:naari/widgets/profile_section.dart';
 import 'package:naari/widgets/CustomCarouel.dart';
 import '../utilis/quotes.dart';
-
+import 'package:naari/widgets/sos_screen.dart';
 import 'package:naari/widgets/emergency_contacts_screen.dart';
+import 'package:naari/widgets/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen();
+  final User? user;
+
+  HomeScreen({required this.user});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -14,12 +18,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int quoteIndex = 0;
-
-  // void _changeQuote() {
-  //   setState(() {
-  //     quoteIndex = (quoteIndex + 1) % sweetSayings.length;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -34,17 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
             alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              // CustomAppBar(
-              //   onTap: _changeQuote,
-              //   quoteIndex: quoteIndex,
-              // ),
-              // SizedBox(height: 20),
+              ProfileSection(user: widget.user!),
+              SizedBox(height: 20),
               CustomCarousel(
                 articleTitles: articleTitle,
                 imageSliders: imageSliders,
                 articleLinks: articleLinks,
               ),
-              SizedBox(height: 20), // Add some spacing between the carousel and emergency contacts
+              SizedBox(height: 20),
               EmergencyContactsScreen(),
             ],
           ),

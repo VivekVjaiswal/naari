@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "457812962712",
+    "project_id": "vivek-b35b6",
+    "storage_bucket": "vivek-b35b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457812962712:android:4e56b5795033ca874a0fed",
+        "android_client_info": {
+          "package_name": "com.example.naari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457812962712-lucqolu355jlht3uvveo3rrpg4l5glm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKjNhRymqt-_tWSCbVFCtEw3eIlo1UFt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457812962712-lucqolu355jlht3uvveo3rrpg4l5glm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

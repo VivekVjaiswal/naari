@@ -8,22 +8,22 @@ List sweetSayings = [
 ];
 
 List<String> articleTitle = [
-  "Pakistani",
-  "We have to end Violance",
-  "Be a change",
-  "You are strong"
+  "",
+  "",
+  "",
+  ""
 ];
 List<String> imageSliders = [
-  "https://media.istockphoto.com/photos/silhouette-of-super-strong-successful-businesswoman-picture-id1249879109?k=20&m=1249879109&s=612x612&w=0&h=I-joEMjqkq1wCJZJeLWUCd1d2HcB5WxBShdkA9YM0cg=",
-  "https://media.istockphoto.com/vectors/young-woman-looks-at-the-mirror-and-sees-her-happy-reflection-vector-id1278815846?k=20&m=1278815846&s=612x612&w=0&h=JUTmV9Of-_ILOfXBfV9Cmp_41yuTliSdFIcZy5LKuss=",
-  "https://media.istockphoto.com/vectors/mental-health-or-psychology-concept-with-flowering-human-head-vector-id1268669581?k=20&m=1268669581&s=612x612&w=0&h=YVLTKCZXKugEn40aqOkir4vcoFeTUAQToa1i3AFYRNU=",
-  "https://media.istockphoto.com/photos/confidence-and-strength-concept-picture-id1086700012?k=20&m=1086700012&s=612x612&w=0&h=1wWVN3AB7BH7o3y2A2b-NG3HB9H6Dwkc9OLz2lxgwAY=",
+  "https://images.squarespace-cdn.com/content/v1/5d7025a4a7115800013abe24/1655217765652-95ZZHELN23O6X3QU366D/unsplash-image-46bom4lObsA.jpg?format=1000w",
+  "https://crossbarriers.org/wp-content/uploads/2020/03/Women-Empowerment-in-India-1-1.jpg",
+  "https://www.unwomen.org/sites/default/files/Communications/Headquarters/Images/1-EconomicEmpowerment_675x350.jpg?la=en",
+  "https://as2.ftcdn.net/v2/jpg/04/89/40/41/1000_F_489404131_n94lHm5HAwlQObFpzefMXQuzHvpqSL1l.jpg"
 ];
 
 List<String> articleLinks = [
-  "https://www.instagram.com/",
-  "https://www.google.com/",
-  "https://www.facebook.com/",
-  "https://en.wikipedia.org/wiki/X.com"
+  "https://www.tradeexperettes.org/blog/articles/if-at-first-you-do-not-succeed-try-womens-economic-empowerment-through-trade",
+  "https://crossbarriers.org/women-empowerment-in-india-and-csr-as-a-catalyst/",
+  "https://crossbarriers.org/women-empowerment-in-india-and-csr-as-a-catalyst/",
+  "https://crossbarriers.org/women-empowerment-in-india-and-csr-as-a-catalyst/"
 
   ];
