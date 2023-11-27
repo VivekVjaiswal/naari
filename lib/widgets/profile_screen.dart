@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_services.dart';
 import 'user_profile.dart';
-import 'package:image_picker/image_picker.dart';
 import 'login_screen.dart'; // Import the login screen
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProfileScreen extends StatefulWidget {
   final User user;
@@ -21,7 +21,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   late TextEditingController _phoneNumberController;
   late TextEditingController _addressController;
   List<TextEditingController> _emergencyContactControllers = [];
-  File? _image; // Add this line to store the selected image file
 
   @override
   void initState() {
@@ -47,6 +46,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
     } catch (e) {
       print(e.toString());
       // Handle error
+    }
+  }
+  Future<void> _fetchEmergencyContacts() async {
+    try {
+      // Replace 'user_id' with the actual user ID from your authentication
+      String userId = widget.user.uid;
+
+      // Reference to the 'emergencyContacts' sub-collection
+      CollectionReference<Map<String, dynamic>> emergencyContactsCollection =
+      FirebaseFirestore.instance.collection('users').doc(userId).collection('emergencyContacts');
+
+      // Fetch the emergency contacts
+      QuerySnapshot<Map<String, dynamic>> querySnapshot =
+      await emergencyContactsCollection.get();
+
+      // Extract contact numbers from the documents
+      List<String> emergencyContacts = querySnapshot.docs
+          .map((doc) => doc['contactNumber'] as String)
+          .toList();
+
+      // Initialize emergency contact controllers with fetched data
+      _emergencyContactControllers =
+          emergencyContacts.map((contact) => TextEditingController(text: contact)).toList();
+
+      setState(() {});
+    } catch (e) {
+      print('Error fetching emergency contacts: $e');
     }
   }
 
@@ -81,17 +107,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  // Function to open the gallery and pick an image
-  Future<void> _pickImage() async {
-    final pickedFile =
-    await ImagePicker().getImage(source: ImageSource.gallery);
-
-    if (pickedFile != null) {
-      setState(() {
-        _image = File(pickedFile.path);
-      });
-    }
-  }
 
   // Function to add more emergency contact fields
   void _addEmergencyContactField() {
@@ -129,13 +144,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Image picker button
-              ElevatedButton(
-                onPressed: _pickImage,
-                child: Text('Pick Image'),
-              ),
-              // Display selected image
-              _image != null ? Image.file(_image!) : SizedBox.shrink(),
               // Rest of the profile screen UI
               Text('Name:'),
               TextField(controller: _nameController),

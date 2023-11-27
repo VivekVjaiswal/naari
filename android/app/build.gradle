@@ -80,5 +80,6 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:latest_version"))
     implementation("com.google.firebase:firebase-analytics-ktx")
         implementation 'com.android.support:multidex:1.0.3'
-
+    implementation 'com.google.android.gms:play-services-auth:20.0.0'
+    implementation 'com.google.gms:google-services:4.3.10'
 }
